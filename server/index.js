@@ -10,7 +10,6 @@ config()
 const app = express()
 app.use(express.json());
 app.use(cors())
-app.use(express.static("public"))
 
 const emailContent = `
     <!DOCTYPE html>
@@ -21,7 +20,7 @@ const emailContent = `
     </head>
     <body style="background: #FFEEEE; width: 100%;">
         <header style="background: #ffb9b9; text-align: center;">
-            <img src="${process.env.API_URL}/mario.png" alt="Mario" style="height: 7rem; border-radius: 100%">
+            <img src="https://play-lh.googleusercontent.com/7Z4x3nLGglKbIDMafIPmdFUB9zpwu-k3HHbIJ1DeWz-4HCp9IFfCzk5r1JsmyiT85y1v" alt="Mario" style="height: 7rem; border-radius: 100%">
         </header>
         <div style="padding: 1rem">
             <h1>Confirmation de la prise de contact</h1>
@@ -87,35 +86,6 @@ app.post('/send-mail', async (req, res) => {
 
 app.get("/", (req, res) => {
     return res.status(200).send("App is live!")
-})
-
-// Héberger les ressources externes nécessaires pour l'email
-const contentTypes = {
-    '.html': 'text/html',
-    '.js': 'text/javascript',
-    '.css': 'text/css',
-    '.json': 'application/json',
-    '.png': 'image/png',
-    '.jpg': 'image/jpg',
-    '.gif': 'image/gif',
-    '.svg': 'image/svg+xml',
-    '.wav': 'audio/wav',
-    '.mp4': 'video/mp4',
-    '.woff': 'application/font-woff',
-    '.ttf': 'application/font-ttf',
-    '.eot': 'application/vnd.ms-fontobject',
-    '.otf': 'application/font-otf',
-    '.wasm': 'application/wasm'
-};
-
-app.get("/public/:file", (req, res) => {
-    let parsedUrl = url.parse(req.url, true)
-    parsedUrl.pathArray = parsedUrl.pathname.split('/')
-    parsedUrl.pathArray.shift()
-
-    res.writeHead(200, { 'Content-Type': contentTypes[extname(parsedUrl.path).toString().toLowerCase()] || 'application/octet-stream' });
-    if (parsedUrl.path.endsWith('/')) parsedUrl.pathname = parsedUrl.pathname.substring(0, parsedUrl.pathname.length -1)
-    res.end(readFileSync(`${parsedUrl.pathname}`), 'utf-8');
 })
 
 app.listen(process.env.PORT, () => console.log(`Express server is listening on port ${process.env.PORT}`));
