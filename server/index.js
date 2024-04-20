@@ -89,35 +89,6 @@ app.get("/", (req, res) => {
     return res.status(200).send("App is live!")
 })
 
-// Héberger les ressources externes nécessaires pour l'email
-/*const contentTypes = {
-    '.html': 'text/html',
-    '.js': 'text/javascript',
-    '.css': 'text/css',
-    '.json': 'application/json',
-    '.png': 'image/png',
-    '.jpg': 'image/jpg',
-    '.gif': 'image/gif',
-    '.svg': 'image/svg+xml',
-    '.wav': 'audio/wav',
-    '.mp4': 'video/mp4',
-    '.woff': 'application/font-woff',
-    '.ttf': 'application/font-ttf',
-    '.eot': 'application/vnd.ms-fontobject',
-    '.otf': 'application/font-otf',
-    '.wasm': 'application/wasm'
-};
-
-app.get("/public/:file", (req, res) => {
-    let parsedUrl = url.parse(req.url, true)
-    parsedUrl.pathArray = parsedUrl.pathname.split('/')
-    parsedUrl.pathArray.shift()
-
-    res.writeHead(200, { 'Content-Type': contentTypes[extname(parsedUrl.path).toString().toLowerCase()] || 'application/octet-stream' });
-    if (parsedUrl.path.endsWith('/')) parsedUrl.pathname = parsedUrl.pathname.substring(0, parsedUrl.pathname.length -1)
-    res.end(readFileSync(`.${parsedUrl.pathname}`), 'utf-8');
-})*/
-
 app.listen(process.env.PORT, () => console.log(`Express server is listening on port ${process.env.PORT}`));
 
 module.exports = app

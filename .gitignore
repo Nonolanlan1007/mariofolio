@@ -5,3 +5,4 @@ server/.env
 *.odt
 *.pdf
 .idea
+.vercel
