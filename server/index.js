@@ -1,11 +1,12 @@
-import express from 'express';
-import {SMTPClient} from "smtp-client";
-import "dotenv/config"
-import {extname} from "path"
-import url from "node:url";
-import { readFileSync } from "fs"
-import cors from "cors"
+const express = require("express");
+const {SMTPClient} = require("smtp-client")
+const {config} = require("dotenv")
+const { extname } = require("path")
+const url = require("url")
+const { readFileSync } = require("fs")
+const cors = require("cors")
 
+config()
 const app = express()
 app.use(express.json());
 app.use(cors())
