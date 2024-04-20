@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Acceuil - Mario</title>
+        <link rel="stylesheet" href="./styles/globals.css" />
+        <link rel="stylesheet" href="./styles/index.css" />
+        <link rel="icon" href="assets/favicon.png" />
+    </head>
+    <body>
+        <header>
+            <p>Nolhan L.</p>
+        </header>
+        <nav>
+            <a href="./index.html#about">À propos de moi</a>
+            <a href="./index.html#work">Mes réalisations</a>
+            <a href="./index.html#contact">Me contacter</a>
+            <a href="https://fr.wikipedia.org/wiki/Super_Mario" target="_blank">Voir sur Wikipédia</a>
+            <a href="./pages/save-peach.html">Sauver Peach</a>
+        </nav>
+
+        <div class="header">
+            <img src="assets/avatar_mario.png" alt="Mario" onclick="avatarClicked()">
+
+            <p>Moi, c'est <span>Mario</span></p>
+        </div>
+
+        <section id="about">
+            <h1>À propos de moi</h1>
+            <div class="bento">
+                <div class="div1">
+                    <iframe width="410" height="230" src="https://www.youtube.com/embed/pu57M7cjSD4?si=mXx0KlTv_VYARROS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="div2">
+                    <img src="assets/mario_kart.png" alt="Mario sur son Kart" class="kart">
+                    <p>
+                        ...et pilote
+                    </p>
+                </div>
+                <div class="div3">
+                    <img src="assets/mario_pumper.png" alt="Mario avec une ventouse" class="mario">
+                    <p>
+                        Mais avant tout un plombier amusant et un as de la ventouse !
+                    </p>
+                </div>
+                <div class="div4">
+                    <img src="assets/mario.png" alt="Mario" class="mario">
+                </div>
+                <div class="div5">
+                    <img src="assets/luigi_jumping.png" alt="Luigi" class="luigi">
+                    <p>
+                        Luigi, mon frère et collègue chez Super Mario Bros. Plumbing, est un partenaire dévoué dont l'expertise et le soutien inestimables font de chaque intervention une aventure réussie.
+                    </p>
+                </div>
+                <div class="div6">
+                    <img src="assets/smbp_truck.png" alt="Camion Super Mario Brow. Plumbing" class="truck" onclick="startTruckAnimation()" id="smbpTruck">
+                </div>
+                <div class="div7">
+                    <img src="assets/smbp_logo.png" alt="Super Mario Bros. Plumbing Logo">
+                    <p>Super Mario Bros. Plumbing, fondée en 1981, incarne l'excellence dans le domaine de la plomberie. Notre réputation de professionnalisme et de fiabilité en fait un choix de confiance pour vos besoins en plomberie. Chez Super Mario Bros. Plumbing, nous nous engageons à fournir un service exceptionnel et une satisfaction clientèle inégalée.</p></div>
+                <div class="div8">
+                    <img src="assets/dr_mario.png" alt="Dr Mario" class="dr">
+                    <p>À mes heures perdues, je suis aussi médecin...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work">
+            <h1>Mes réalisations</h1>
+            <div class="bento">
+                <div class="div1">
+                    <img src="assets/blue_toad.png" alt="Toad Bleu">
+                </div>
+                <div class="div2">
+                    <img src="assets/bowser_cat.png" alt="Bowser Chat">
+                </div>
+                <div class="div3">
+                    <img src="assets/red_toad.png" alt="Toad Rouge">
+                </div>
+                <div class="div4">
+                    <img src="assets/peach.png" alt="Peach">
+                </div>
+                <div class="div5">
+                    <img src="assets/penguin.png" alt="Pingouin">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Me contacter</h1>
+            <p>Vous pouvez me laisser un message à l'aide du formulaire ci-dessous,<br>et je vous recontacterez pour que l'on discute ensembles !</p>
+            <div id="contactForm">
+                <label>
+                    <p>Adresse email</p>
+                    <input type="email" placeholder="gerard.depardieu@tf1films.fr" id="contactEmailInput" required>
+                </label>
+                <label>
+                    <p>Message</p>
+                    <textarea form="contactForm" placeholder="Votre message ici" id="contactContentInput" required></textarea>
+                </label>
+                <input type="submit" value="Envoyer" onclick="sendEmail()" id="contactSubmitInput">
+            </div>
+        </section>
+
+        <footer>
+            <div class="pipe" id="footerPipeMedium">
+                <img src="assets/pipes/toad.png" alt="Toad">
+            </div>
+            <div class="text">
+                <p id="p1">Créé avec <span id="heart" onmouseenter="handleHeartEgg()">❤️</span> en 2024</p>
+                <a  href="https://creativecommons.org/licenses/by-nc-sa/4.0">Contenu régit sous licence Creative Commons BY-NC-SA 4.0</a>
+                <p id="p3">Le contenu présenté sur cet email n’est pas affilié avec Nintendo.</p>
+                <p id="easterEggs">Vous avez trouvé <span id="foundEasterEggsLength">0</span>/<span id="easterEggsLength">0</span> easter eggs.</p>
+            </div>
+            <div class="pipe" id="footerPipeLarge">
+                <img src="assets/pipes/mario.png" alt="Mario" class="mario">
+                <img src="assets/thinking_balloon.png" alt="Bulle de Pensée" class="balloon">
+            </div>
+            <div class="pipe" id="footerPipeSmall">
+                <img src="assets/pipes/luigi.png" alt="Mario">
+            </div>
+        </footer>
+
+        <script src="scripts/index.js"></script>
+        <audio src="assets/itsmemario.mp3" preload id="itsmemario"></audio>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sauver Peach - Mario</title>
+        <link rel="stylesheet" href="../styles/globals.css" />
+        <link rel="stylesheet" href="../styles/save-peach.css" />
+        <link rel="icon" href="../assets/favicon.png" />
+    </head>
+    <body onload="startGame()">
+        <nav>
+            <a href="../index.html">Accueil</a>
+            <a href="https://fr.wikipedia.org/wiki/Super_Mario" target="_blank">Voir sur Wikipedia</a>
+            <a href="./save-peach.html" class="underline">Sauver Peach</a>
+        </nav>
+        <div id="gameHeader" class="header">
+            <h1>Oh non !</h1>
+            <h2>Bowser a capturé la Princesse Peach !</h2>
+            <p>Battez Bowser dans une partie de Mortouse* pour libérer la princesse.<br>ATTENTION: Une défaite et le mariage sera conclu !</p>
+            <p class="comment">*Morpion + Ventouse = Mortouse</p>
+        </div>
+        <div id="canPlay" class="content">
+            <img src="../assets/bowser_peach.png" alt="Bowser & Peach">
+            <div class="morpion">
+                <div class="player">
+                    <img src="../assets/avatar_bowser.png" class="avatar" alt="Bowser">
+                    <p>Bowser</p>
+                </div>
+                <div class="plate">
+                    <div class="line" id="line1">
+                    </div>
+                    <div class="line" id="line2">
+                    </div>
+                    <div class="line" id="line3">
+                    </div>
+                </div>
+                <div class="player">
+                    <img src="../assets/avatar_mario.png" class="avatar" alt="Mario">
+                    <p>Mario</p>
+                </div>
+                <p id="cestavous">C'est à vous !</p>
+            </div>
+        </div>
+        <div id="gameLost" class="content">
+            <img src="../assets/peach_crying.png" alt="Peach en pleurs">
+            <div class="text">
+                <h1>Oh non !</h1>
+                <h2>Vous arrivez trop tard !</h2>
+                <p>Bowser a déjà épousé la princesse.</p>
+            </div>
+        </div>
+        <div id="gameWon" class="content">
+            <img src="../assets/peach_mario.png" alt="Peach & Mario">
+            <div class="text">
+                <h1>Félicitations !</h1>
+                <p>Vous avez encore une fois sauvé la princesse des mains de Bowser !</p>
+            </div>
+        </div>
+
+        <script src="../scripts/morpion.js"></script>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+.header, .content .text {
+    text-align: center;
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+
+    h1 {
+        font-size: 3rem;
+        margin-block: .5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-block: .5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        font-family: "Martel Sans", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        margin-block: 0;
+
+        &.comment {
+            font-size: .5rem;
+            opacity: .5;
+        }
+    }
+
+    &#gameHeader {
+        display: none;
+    }
+}
+
+.content {
+    display: none;
+    align-items: center;
+    gap: 5rem;
+    justify-content: center;
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+
+    .morpion {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .player {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .avatar {
+                border-radius: 5rem;
+            }
+        }
+
+        #cestavous {
+            animation: clignotement 1s infinite linear;
+        }
+
+        .plate {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: .5rem;
+
+            .line {
+                flex: 1;
+                align-items: stretch;
+                display: flex;
+                gap: .5rem;
+
+                .box {
+                    height: 6.25rem;
+                    width: 6.25rem;
+                    border-radius: 5px;
+                    background-color: #C7C7C7;
+                    outline: none;
+                    border: none;
+
+                    &:not([disabled="disabled"]) {
+                        cursor: pointer
+                    }
+
+                    &.bowser {
+                        background-color: #FFE8C5;
+                    }
+
+                    &.mario {
+                        background-color: #FFD8D8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes clignotement {
+    0% {
+        opacity: 1;
+    }
+    85% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+    }
+}

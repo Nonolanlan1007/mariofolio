@@ -1,0 +1,7 @@
+server/.vercel
+server/node_modules
+server/.env
+
+*.odt
+*.pdf
+.idea

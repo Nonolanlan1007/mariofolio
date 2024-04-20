@@ -1,0 +1,539 @@
+.header {
+  margin: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    border-radius: 100%;
+    height: 14rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+
+  p {
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+
+    span {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        bottom: 7px;
+        left: 14px;
+        content: "";
+        background-image: url("../assets/mario_name_underline.png");
+        width: 68px;
+        height: 7px;
+      }
+    }
+  }
+}
+
+section {
+  margin-block: 300px;
+
+  h1 {
+    font-family: "Martel Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &#about .bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    width: 1030px;
+    height: 765px;
+
+    div {
+      border-radius: 10px;
+      min-width: 235px;
+      min-height: 235px;
+      padding: 1rem;
+      position: relative;
+
+      &.div1 {
+        grid-area: 2 / 2 / 3 / 4;
+        background-color: rgb(87, 156, 94, .47);
+        display: flex;
+        justify-content: center;
+      }
+      &.div2 {
+        grid-area: 3 / 2 / 4 / 3;
+        background-color: rgb(151, 151, 151, .47);
+
+        .kart {
+          position: absolute;
+          right: -60px;
+          top: -72px;
+        }
+
+        p {
+          position: absolute;
+          bottom: 1rem;
+          z-index: 4;
+          color: black;
+          font-family: "Martel Sans", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          font-size: .75rem;
+        }
+      }
+      &.div3 {
+        grid-area: 3 / 3 / 4 / 4;
+        background-color: #F7B58B;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .mario {
+          position: absolute;
+          top: -29px;
+        }
+
+        p {
+          position: absolute;
+          bottom: 1rem;
+          z-index: 4;
+          color: black;
+          font-family: "Martel Sans", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          font-size: .75rem;
+          width: calc(100% - 2rem);
+        }
+      }
+      &.div4 {
+        grid-area: 3 / 4 / 4 / 5;
+        background-color: #E91216;
+        display: flex;
+        justify-content: center;
+
+        .mario {
+          position: absolute;
+          top: -25px;
+        }
+      }
+      &.div5 {
+        grid-area: 1 / 4 / 3 / 5;
+        background-color: #51B33A;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .luigi {
+          position: absolute;
+          right: -30.5px;
+          top: -42px;
+        }
+
+        p {
+          position: absolute;
+          bottom: -1rem;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          z-index: 4;
+          color: white;
+          font-family: "Martel Sans", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          font-size: .75rem;
+          padding: 1rem;
+          background: linear-gradient(to top, rgb(81, 179, 58), rgba(81, 179, 58, 0.5));
+        }
+      }
+      &.div6 {
+        grid-area: 1 / 3 / 2 / 4;
+        background-color: rgb(231, 141, 56, .3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .truck {
+          position: absolute;
+          left: -21px;
+          cursor: pointer;
+
+          &.animate {
+            animation: 4s ease-in truck_move 1;
+          }
+        }
+      }
+      &.div7 {
+        grid-area: 1 / 1 / 2 / 3;
+        background-color: #f8da98;
+
+        p {
+          font-family: "Martel Sans", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          font-size: .75rem;
+        }
+      }
+      &.div8 {
+        grid-area: 2 / 1 / 4 / 2;
+        background-color: #58A6EE;
+
+        .dr {
+          position: absolute;
+          right: -30px;
+          top: 0;
+        }
+
+        p {
+          position: absolute;
+          bottom: 1rem;
+          z-index: 4;
+          color: white;
+          font-family: "Martel Sans", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+
+  &#work .bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    height: 867px;
+    width: 966px;
+
+    div {
+      min-width: 235px;
+      min-height: 235px;
+      border-radius: 10px;
+      padding: 1rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+
+      &.div1 {
+        grid-area: 1 / 1 / 2 / 2;
+        background-image: url("../assets/houses/blue_toad_house.png");
+
+        img {
+          position: absolute;
+          bottom: -10px;
+          right: -40px;
+          z-index: 3;
+        }
+      }
+      &.div2 {
+        grid-area: 1 / 2 / 2 / 5;
+        background-image: url("../assets/houses/bowser_castle.png");
+
+        img {
+          position: absolute;
+          bottom: -17px;
+          right: -52px;
+        }
+      }
+      &.div3 {
+        grid-area: 2 / 4 / 3 / 5;
+        background-image: url("../assets/houses/red_toad_house.png");
+
+        img {
+          position: absolute;
+          bottom: -11px;
+          right: -48px;
+        }
+      }
+      &.div4 {
+        grid-area: 2 / 1 / 3 / 4;
+        background-image: url("../assets/houses/peach_castle.png");
+
+        img {
+          position: absolute;
+          top: -19px;
+          right: -32px;
+        }
+      }
+      &.div5 {
+        grid-area: 3 / 1 / 5 / 5;
+        background-image: url("../assets/houses/penguins_castle.png");
+
+        img {
+          position: absolute;
+          bottom: -18px;
+          right: -26px;
+        }
+      }
+    }
+  }
+
+  &#contact {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    p {
+      text-align: center;
+      font-family: "Martel Sans", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    #contactForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Martel Sans", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      gap: .5rem;
+
+      label {
+        width: 100%;
+        text-align: center;
+
+        p {
+          opacity: .5;
+          margin-block: 0;
+        }
+
+        input, textarea {
+          width: 100%;
+          background: #D9D9D9;
+          border: none;
+          border-radius: 5px;
+          padding: .5rem 1rem;
+
+          &::placeholder {
+            color: rgb(0, 0, 0, .75)
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          height: 200%;
+        }
+      }
+
+      input[type="submit"] {
+        border: none;
+        border-radius: 5px;
+        background: #E60001;
+        padding: .25rem .5rem;
+        color: white;
+        cursor: pointer;
+        font-family: "Martel Sans", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+
+        &:hover {
+          opacity: .8;
+        }
+
+        &:disabled {
+          content: "";
+          height: 2em;
+          width: 2em;
+          border-radius: 50%;
+          border: 5px solid #E60001;
+          border-top-color: transparent;
+          animation: spin 3s linear infinite;
+          background: none;
+          cursor: progress;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: relative;
+  gap: 10rem;
+
+  .pipe {
+    position: relative;
+
+    &#footerPipeMedium {
+      background-image: url("../assets/pipes/medium.png");
+      width: 132px;
+      height: 257px;
+      display: flex;
+      justify-content: center;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        animation: infinite ease-in-out mediumPipe 3s;
+      }
+    }
+
+    &#footerPipeLarge {
+      background-image: url("../assets/pipes/large.png");
+      width: 155px;
+      height: 281px;
+      display: flex;
+      justify-content: center;
+
+      &:not(.frozen) {
+        .mario {
+          bottom: 0;
+          animation: infinite ease-in-out largePipe 5s;
+        }
+
+        .balloon {
+          display: none;
+        }
+      }
+
+      &.frozen {
+        .mario {
+          top: 0;
+        }
+
+        .balloon {
+          display: block;
+          top: -214px;
+          right: -241px;
+        }
+      }
+
+      img {
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    &#footerPipeSmall {
+      background-image: url("../assets/pipes/small.png");
+      width: 136px;
+      height: 132px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      bottom: 30rem;
+
+      img {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        animation: infinite ease-in-out smallPipe 5s;
+      }
+    }
+  }
+
+  .text {
+    margin-block: 2rem;
+    text-align: center;
+
+    p {
+      color: rgb(0,0,0,.35);
+      font-weight: bold;
+      font-size: .75rem;
+      margin-block: 0;
+
+      #heart:hover {
+        animation: ease-in-out infinite heart 1s;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      color: rgb(0,0,0,.45);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: .75rem;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 359deg;
+  }
+}
+
+@keyframes mediumPipe {
+  0% {
+    transform: translateY(0);
+  }
+  40%, 60% {
+    transform: translateY(-96px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes largePipe {
+  0% {
+    transform: translateY(0);
+  }
+  20%, 80% {
+    transform: translateY(-171px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes smallPipe {
+  0% {
+    transform: translateX(0);
+  }
+  10%, 30% {
+    transform: translateX(46px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes heart {
+  0% {
+    font-size: .75rem;
+  }
+  50% {
+    font-size: .85rem;
+  }
+  100% {
+    font-size: .75rem;
+  }
+}
+
+@keyframes truck_move {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+
+    transform: translateX(-500px) scaleX(1);
+  }
+  60% {
+    transform: translateX(-500px) scaleX(-1);
+  }
+  90% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
