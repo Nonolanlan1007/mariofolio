@@ -79,7 +79,7 @@ app.get("/public/:file", (req, res) => {
 })
 
 app.listen({
-    port: Number(process.env.PORT),
+    port: 3000,
     host: "0.0.0.0"
 }, () => console.log(`Express server is listening on port ${process.env.PORT}`));
 
