@@ -17,7 +17,7 @@ app.post('/send-mail', async (req, res) => {
 
     if (!email) return res.status(400).send("Bad Request")
 
-    const content = readFileSync("./public/email-template.html", { encoding: "utf-8" }).replace("{{apiUrl}}", process.env.API_URL)
+    const content = readFileSync("/vercel/output/public/email-template.html", { encoding: "utf-8" }).replace("{{apiUrl}}", process.env.API_URL)
 
     const emailLines = [
         `From: Mario <${process.env.GMAIL_EMAIL}>`,
