@@ -10,13 +10,14 @@ config()
 const app = express()
 app.use(express.json());
 app.use(cors())
+app.use(express.static("public"))
 
 app.post('/send-mail', async (req, res) => {
     const { email } = req.body
 
     if (!email) return res.status(400).send("Bad Request")
 
-    const content = readFileSync("./email-template.html", { encoding: "utf-8" }).replace("{{apiUrl}}", process.env.API_URL)
+    const content = readFileSync("./public/email-template.html", { encoding: "utf-8" }).replace("{{apiUrl}}", process.env.API_URL)
 
     const emailLines = [
         `From: Mario <${process.env.GMAIL_EMAIL}>`,
@@ -51,7 +52,7 @@ app.get("/", (req, res) => {
 })
 
 // Héberger les ressources externes nécessaires pour l'email
-const contentTypes = {
+/*const contentTypes = {
     '.html': 'text/html',
     '.js': 'text/javascript',
     '.css': 'text/css',
@@ -77,7 +78,7 @@ app.get("/public/:file", (req, res) => {
     res.writeHead(200, { 'Content-Type': contentTypes[extname(parsedUrl.path).toString().toLowerCase()] || 'application/octet-stream' });
     if (parsedUrl.path.endsWith('/')) parsedUrl.pathname = parsedUrl.pathname.substring(0, parsedUrl.pathname.length -1)
     res.end(readFileSync(`.${parsedUrl.pathname}`), 'utf-8');
-})
+})*/
 
 app.listen(process.env.PORT, () => console.log(`Express server is listening on port ${process.env.PORT}`));
 
