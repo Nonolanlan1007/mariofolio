@@ -79,6 +79,6 @@ app.get("/public/:file", (req, res) => {
     res.end(readFileSync(`.${parsedUrl.pathname}`), 'utf-8');
 })
 
-app.listen(3000, () => console.log(`Express server is listening on port ${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`Express server is listening on port ${process.env.PORT}`));
 
 module.exports = app

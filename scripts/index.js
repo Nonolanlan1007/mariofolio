@@ -22,7 +22,7 @@ function sendEmail () {
     if (!content.value) return alert("Veuillez ajouter un message.")
 
     button.disabled = true
-    fetch("http://135.125.59.195:3000/send-mail", {
+    fetch("https://mariofolio.vercel.app/send-mail", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
