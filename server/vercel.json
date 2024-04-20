@@ -13,13 +13,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.js",
-      "methods": ["GET", "POST"]
-    },
-    {
-      "src": "/(.+\\..+)",
-      "dest": "/public/$1",
-      "status": 200
+      "dest": "/index.js"
     }
   ]
 }
