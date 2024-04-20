@@ -82,3 +82,5 @@ app.listen({
     port: Number(process.env.PORT),
     host: "0.0.0.0"
 }, () => console.log(`Express server is listening on port ${process.env.PORT}`));
+
+module.exports = app
