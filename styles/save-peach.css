@@ -48,6 +48,7 @@
 }
 .content .morpion .player .avatar {
   border-radius: 5rem;
+  height: 1.5rem;
 }
 .content .morpion #cestavous {
   animation: clignotement 1s infinite linear;
