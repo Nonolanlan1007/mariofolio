@@ -1,15 +1,21 @@
 const express = require("express");
 const {SMTPClient} = require("smtp-client")
 const {config} = require("dotenv")
-const { extname } = require("path")
-const url = require("url")
-const { readFileSync } = require("fs")
 const cors = require("cors")
+const {rateLimit} = require("express-rate-limit")
 
 config()
 const app = express()
 app.use(express.json());
 app.use(cors())
+app.use(rateLimit({
+    windowMs: 1000 * 60 * 15,
+    max: 5,
+    message: "You have exceeded the 5 requests in 15 minutes limit!",
+    standardHeaders: true,
+    statusCode: 429,
+    legacyHeaders: false
+}));
 
 const emailContent = `
     <!DOCTYPE html>
