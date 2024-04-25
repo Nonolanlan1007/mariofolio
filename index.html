@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Acceuil - Mario</title>
-        <link rel="stylesheet" href="./styles/globals.css" />
-        <link rel="stylesheet" href="./styles/index.css" />
-        <link rel="icon" href="assets/favicon.png" />
+        <link rel="stylesheet" href="./styles/globals.css">
+        <link rel="stylesheet" href="./styles/index.css">
+        <link rel="icon" href="assets/favicon.png">
     </head>
     <body>
         <header>
@@ -29,7 +29,7 @@
             <h1>À propos de moi</h1>
             <div class="bento">
                 <div class="div1">
-                    <iframe width="410" height="230" src="https://www.youtube.com/embed/pu57M7cjSD4?si=mXx0KlTv_VYARROS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="410" height="230" src="https://www.youtube.com/embed/pu57M7cjSD4?si=mXx0KlTv_VYARROS" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="div2">
                     <img src="assets/mario_kart.png" alt="Mario sur son Kart" class="kart">
@@ -91,12 +91,12 @@
             <p>Vous pouvez me laisser un message à l'aide du formulaire ci-dessous,<br>et je vous recontacterez pour que l'on discute ensembles !</p>
             <div id="contactForm">
                 <label>
-                    <p>Adresse email</p>
+                    Adresse email
                     <input type="email" placeholder="gerard.depardieu@tf1films.fr" id="contactEmailInput" required>
                 </label>
                 <label>
-                    <p>Message</p>
-                    <textarea form="contactForm" placeholder="Votre message ici" id="contactContentInput" required></textarea>
+                    Message
+                    <textarea placeholder="Votre message ici" id="contactContentInput" required></textarea>
                 </label>
                 <input type="submit" value="Envoyer" onclick="sendEmail()" id="contactSubmitInput">
             </div>
